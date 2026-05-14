@@ -1,0 +1,16 @@
+# Laravel
+/backend/vendor/
+/backend/.env
+/backend/node_modules/
+/backend/storage/*.key
+
+# Frontend
+/frontend/node_modules/
+/frontend/.env
+
+# Docker
+.env.docker
+
+# Sistema
+.DS_Store
+Thumbs.db
