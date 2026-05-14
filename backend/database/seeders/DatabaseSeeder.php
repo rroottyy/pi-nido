@@ -9,26 +9,20 @@ use Illuminate\Support\Facades\Hash;
 class DatabaseSeeder extends Seeder
 {
     public function run(): void
-    {
-        User::create([
-            'name'     => 'Admin',
-            'email'    => 'admin@nido.com',
-            'password' => Hash::make('admin1234'),
-            'role'     => 'admin',
-        ]);
+{
+    User::firstOrCreate(
+        ['email' => 'admin@nido.com'],
+        ['name' => 'Admin', 'password' => Hash::make('admin1234'), 'role' => 'admin']
+    );
 
-        User::create([
-            'name'     => 'Ana García',
-            'email'    => 'ana@nido.com',
-            'password' => Hash::make('password123'),
-            'role'     => 'seller',
-        ]);
+    User::firstOrCreate(
+        ['email' => 'ana@nido.com'],
+        ['name' => 'Ana García', 'password' => Hash::make('password123'), 'role' => 'seller']
+    );
 
-        User::create([
-            'name'     => 'Juan López',
-            'email'    => 'juan@nido.com',
-            'password' => Hash::make('password123'),
-            'role'     => 'buyer',
-        ]);
-    }
+    User::firstOrCreate(
+        ['email' => 'juan@nido.com'],
+        ['name' => 'Juan López', 'password' => Hash::make('password123'), 'role' => 'buyer']
+    );
+}
 }
