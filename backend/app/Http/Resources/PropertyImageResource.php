@@ -12,7 +12,7 @@ class PropertyImageResource extends JsonResource
         return [
             'id'      => $this->id,
             'path'    => $this->path,
-            'url' => 'http://localhost:8080/storage/' . $this->resource->path,
+            'url'     => config('app.url') . '/storage/' . $this->resource->path,
             'is_main' => $this->is_main,
             'order'   => $this->order,
         ];
